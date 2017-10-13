@@ -44,4 +44,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     password_string = args.password
 
-    print("The password strength is {} in points from 0 to 10".format(get_password_strength(password_string)))
+    print("The password strength is {} in points from 1 to 10".format(get_password_strength(password_string)))

@@ -2,7 +2,7 @@
 
 The script counts password strength and print result in console
 
-0 - the weakest password
+1 - the weakest password
 10 - the strongest password
 
 It counts the password strength according to password lenght, special symbols, digits or upper- low- case characters using.
