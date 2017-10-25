@@ -13,19 +13,19 @@ Example of script launch on Linux, Python 3.5:
 
 ```#!bash
 
-python password_strength.py 
+$ python password_strength.py 
 Password: [Enter your password here]
 The password strength is 7 in points from 0 to 10
 
-python password_strength.py 
+$ python password_strength.py 
 Password: [Enter your password here]
 The password strength is 4 in points from 0 to 10
 
-python password_strength.py 
+$ python password_strength.py 
 Password: [Enter your password here]
 The password strength is 9 in points from 0 to 10
 
-python password_strength.py 
+$ spython password_strength.py 
 Password: [Enter your password here]
 The password strength is 10 in points from 0 to 10
 ```
