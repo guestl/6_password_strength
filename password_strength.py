@@ -1,23 +1,22 @@
 from string import digits
 from string import punctuation
 import getpass
-import logging
 
 
-def get_upcase(string_to_process):
+def get_uppercase_counter(string_to_process):
     return sum(1 for single_char in string_to_process if single_char.isupper())
 
 
-def get_locase(string_to_process):
+def get_locase_counter(string_to_process):
     return sum(1 for single_char in string_to_process if single_char.islower())
 
 
-def get_digits(string_to_process):
+def get_digits_counter(string_to_process):
     return sum(
         1 for single_char in string_to_process if single_char in digits)
 
 
-def get_spec(string_to_process):
+def get_special_chars_counter(string_to_process):
     return sum(
         1 for single_char in string_to_process if single_char in punctuation)
 
@@ -39,22 +38,19 @@ def get_strength_list(string_to_process, upcase_counter,
 
     spec_strength = spec_counter / len(string_to_process)
 
-    logging.error([len_strength, lowup_case_strength,
-                   digits_strength, spec_strength])
-
     return [len_strength, lowup_case_strength, digits_strength, spec_strength]
 
 
 def get_password_strength(password):
     max_strength = 10
 
-    upcase_counter = get_upcase(password)
+    upcase_counter = get_uppercase_counter(password)
 
-    locase_counter = get_locase(password)
+    locase_counter = get_locase_counter(password)
 
-    digits_counter = get_digits(password)
+    digits_counter = get_digits_counter(password)
 
-    spec_counter = get_spec(password)
+    spec_counter = get_special_chars_counter(password)
 
     strength_list = get_strength_list(
         password, upcase_counter, locase_counter, digits_counter, spec_counter)
@@ -71,4 +67,3 @@ if __name__ == '__main__':
 
     print("The password strength is {} in points from 1 to 10".format(
         get_password_strength(password_string)))
-    logging.error(password_string)
