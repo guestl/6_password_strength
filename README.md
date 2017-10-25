@@ -11,7 +11,7 @@ It counts the password strength according to password lenght, special symbols, d
 
 Example of script launch on Linux, Python 3.5:
 
-```#!bash
+```bash
 
 $ python password_strength.py 
 Password: [Enter your password here]

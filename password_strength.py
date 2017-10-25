@@ -3,20 +3,20 @@ from string import punctuation
 import getpass
 
 
-def get_uppercase_counter(string_to_process):
+def get_uppercase_amount(string_to_process):
     return sum(1 for single_char in string_to_process if single_char.isupper())
 
 
-def get_locase_counter(string_to_process):
+def get_locase_amount(string_to_process):
     return sum(1 for single_char in string_to_process if single_char.islower())
 
 
-def get_digits_counter(string_to_process):
+def get_digits_amount(string_to_process):
     return sum(
         1 for single_char in string_to_process if single_char in digits)
 
 
-def get_special_chars_counter(string_to_process):
+def get_special_chars_amount(string_to_process):
     return sum(
         1 for single_char in string_to_process if single_char in punctuation)
 
@@ -44,13 +44,13 @@ def get_strength_list(string_to_process, upcase_counter,
 def get_password_strength(password):
     max_strength = 10
 
-    upcase_counter = get_uppercase_counter(password)
+    upcase_counter = get_uppercase_amount(password)
 
-    locase_counter = get_locase_counter(password)
+    locase_counter = get_locase_amount(password)
 
-    digits_counter = get_digits_counter(password)
+    digits_counter = get_digits_amount(password)
 
-    spec_counter = get_special_chars_counter(password)
+    spec_counter = get_special_chars_amount(password)
 
     strength_list = get_strength_list(
         password, upcase_counter, locase_counter, digits_counter, spec_counter)
